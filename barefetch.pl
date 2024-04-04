@@ -1,6 +1,3 @@
-# Author: Nate Dolny
-# Last modified: April 3, 2024
-#
 #!/usr/bin/env perl
 
 use strict;
@@ -31,9 +28,7 @@ my $package = qx(xbps-query -l | wc -l);
 chomp($package);
 
 print "╭ $host\n";
-print "\| OS: $os\n\| Kernel: $kernel\n\| Mem: $mem\n";
+print "\| OS: $os\n\| Kernel: $kernel\n\| $mem\n";
 print "\| Uptime: $uptime\n\╰ Package Count: $package\n";
-
-
 
 1;
