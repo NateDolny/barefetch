@@ -27,8 +27,8 @@ chomp($uptime);
 my $package = qx(xbps-query -l | wc -l);
 chomp($package);
 
-print "╭ $host\n";
-print "\| OS: $os\n\| Kernel: $kernel\n\| $mem\n";
-print "\| Uptime: $uptime\n\╰ Package Count: $package\n";
+print "⎧ $host\n";
+print "\⎪ OS: $os\n\⎪ Kernel: $kernel\n\⎪ $mem\n";
+print "\⎪ Uptime: $uptime\n\⎩ Package Count: $package\n";
 
 1;
