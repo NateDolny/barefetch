@@ -7,6 +7,10 @@ use strict;
 use warnings;
 
 # get the host 
+my $host = qx(uname -n);
+chomp($host);
+
+# get the os name
 my $os = qx(lsb_release -i -s);
 chomp($os);
 
@@ -26,8 +30,9 @@ chomp($uptime);
 my $package = qx(xbps-query -l | wc -l);
 chomp($package);
 
-print "OS: $os\nKernel: $kernel\nMem: $mem\n";
-print "Uptime: $uptime\nPackage Count: $package\n";
+print "╭ $host\n";
+print "\| OS: $os\n\| Kernel: $kernel\n\| Mem: $mem\n";
+print "\| Uptime: $uptime\n\╰ Package Count: $package\n";
 
 
 
