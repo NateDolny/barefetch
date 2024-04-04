@@ -1,52 +1,36 @@
-# Prerequisites
-*.d
-
-# Object files
+!Build/
+.last_cover_stats
+/META.yml
+/META.json
+/MYMETA.*
 *.o
-*.ko
-*.obj
-*.elf
+*.pm.tdy
+*.bs
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Devel::Cover
+cover_db/
 
-# Precompiled Headers
-*.gch
-*.pch
+# Devel::NYTProf
+nytprof.out
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# Dist::Zilla
+/.build/
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Module::Build
+_build/
+Build
+Build.bat
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Module::Install
+inc/
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# ExtUtils::MakeMaker
+/blib/
+/_eumm/
+/*.gz
+/Makefile
+/Makefile.old
+/MANIFEST.bak
+/pm_to_blib
+/*.zip
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
