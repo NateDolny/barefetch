@@ -18,7 +18,11 @@ chomp($kernel);
 my $mem = qx(free -hL | awk '{print \$5 \$6, \$7, \$8}');
 chomp($mem);
 
-print "OS: $os\nKernel: $kernel\nMem: $mem\n";
+# get the number of packages installed 
+my $package = qx(xbps-query -l | wc -l);
+chomp($package);
+
+print "OS: $os\nKernel: $kernel\nMem: $mem\nPackage Count: $package\n";
 
 
 
