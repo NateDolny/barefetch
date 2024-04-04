@@ -18,11 +18,16 @@ chomp($kernel);
 my $mem = qx(free -hL | awk '{print \$5 \$6, \$7, \$8}');
 chomp($mem);
 
+# get pc uptime 
+my $uptime = qx(uptime -p);
+chomp($uptime);
+
 # get the number of packages installed 
 my $package = qx(xbps-query -l | wc -l);
 chomp($package);
 
-print "OS: $os\nKernel: $kernel\nMem: $mem\nPackage Count: $package\n";
+print "OS: $os\nKernel: $kernel\nMem: $mem\n";
+print "Uptime: $uptime\nPackage Count: $package\n";
 
 
 
