@@ -35,7 +35,14 @@ print "\| OS: $os\n\| Kernel: $kernel\n\| $mem\n";
 print "\| Uptime: $uptime\n\╰ Package Count: $package\n";
 }
 elsif($os eq "Fedora"){
-my $package = qx(rpm -qa | wc -l);
+my $package = qx(dnf list installed | wc -l);
+chomp($package);
+
+print "\| OS: $os\n\| Kernel: $kernel\n\| $mem\n";
+print "\| Uptime: $uptime\n\╰ Package Count: $package\n";
+}
+elsif($os eq "Ubuntu" || $os eq "Debian"){
+my $package = qx(dpkg -l | grep '^ii' | wc -l);
 chomp($package);
 
 print "\| OS: $os\n\| Kernel: $kernel\n\| $mem\n";
