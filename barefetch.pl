@@ -18,7 +18,8 @@ my $kernel = qx(uname -r);
 chomp($kernel);
 
 # get the amount of memory 
-my $mem = qx(free -hL | awk '{print \$5, \$6, \$7, \$8}');
+my $mem = qx(free -hl --si | grep "Mem" | awk '{print "Mem Used: " \$3, 
+"Available: " \$7}');
 chomp($mem);
 
 # get pc uptime 
