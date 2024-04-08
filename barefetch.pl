@@ -34,6 +34,13 @@ chomp($package);
 print "\| OS: $os\n\| Kernel: $kernel\n\| $mem\n";
 print "\| Uptime: $uptime\n\╰ Package Count: $package\n";
 }
+elsif($os eq "Fedora"){
+my $package = qx(rpm -qa | wc -l);
+chomp($package);
+
+print "\| OS: $os\n\| Kernel: $kernel\n\| $mem\n";
+print "\| Uptime: $uptime\n\╰ Package Count: $package\n";
+}
 else{
 
 print "\| OS: $os\n\| Kernel: $kernel\n\| $mem\n";
