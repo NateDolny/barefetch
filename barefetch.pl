@@ -7,6 +7,8 @@ use warnings;
 my $host = qx(uname -n);
 chomp($host);
 
+print "╭ $host\n";
+
 # get the os name
 my $os = qx(lsb_release -i -s);
 chomp($os);
@@ -24,11 +26,17 @@ my $uptime = qx(uptime -p);
 chomp($uptime);
 
 # get the number of packages installed 
+if($os eq "VoidLinux"){
 my $package = qx(xbps-query -l | wc -l);
 chomp($package);
 
-print "╭ $host\n";
 print "\| OS: $os\n\| Kernel: $kernel\n\| $mem\n";
 print "\| Uptime: $uptime\n\╰ Package Count: $package\n";
+}
+else{
+
+print "\| OS: $os\n\| Kernel: $kernel\n\| $mem\n";
+print "\╰ Uptime: $uptime\n";
+}
 
 1;
